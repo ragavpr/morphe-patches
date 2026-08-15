@@ -766,7 +766,7 @@ public final class VideoInformation {
         Utils.verifyOnMainThread();
 
         if (currentPlaybackSpeedMenuInterface == null) {
-            Logger.printException(() -> "Cannot change speed, menu interface is null");
+            Logger.printException(() -> "Cannot change speed, currentPlaybackSpeedMenuInterface is null");
             return;
         }
         if (playbackSpeed <= 0 || playbackSpeed > PLAYBACK_SPEED_MAXIMUM) {
@@ -798,7 +798,7 @@ public final class VideoInformation {
             exoPlayerImpl.patch_setPlaybackParameters(speed, pitch);
             Logger.printDebug(() -> "Video playbackParameters changed, speed: " + speed + " pitch: " + pitch);
         } else {
-            Logger.printException(() -> "Cannot change speed, menu interface is null");
+            Logger.printException(() -> "Cannot change speed/pitch, ExoPlayerImpl instance is null");
         }
     }
 
